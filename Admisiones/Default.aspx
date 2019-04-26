@@ -1,42 +1,130 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Admisiones._Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ATENEA.Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<!DOCTYPE html>
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Admisiones " />
+    <meta name="author" content="Centro de Sistemas - UCB" />
+    <link rel="icon" type="image/png" href="Img/faviconUCB.png" />
+    <title>ADMISIONES</title>
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="Styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="Styles/ucb_lpz.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                <br /><br />        
+                <div id="authBody" class="loginPageBody">
+
+                    <%--CABECERA--%>
+                    <div id="authHeader">
+                        <div class="row">
+                            <div class="form-horizontal"><br />
+                                 <div class="col-xs-3 text-left">
+                                    <div class="logo">
+                                        <a id="logo-link" href="Default.aspx"></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <div class="hidden-xs hidden-sm">
+                                        <h1>Universidad Cat&oacute;lica Boliviana "San Pablo"<br />
+                                            Unidad Académica La Paz
+                                        </h1>
+                                    </div>
+                                    <div class="visible-sm">
+                                        <h3>Universidad Cat&oacute;lica Boliviana "San Pablo"<br />
+                                            Unidad Académica La Paz
+                                        </h3>
+                                    </div>
+                                    <div class="visible-xs">
+                                        <h5>Universidad Cat&oacute;lica Boliviana "San Pablo"<br />
+                                            Unidad Académica La Paz
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%--CUERPO--%>
+                    <div id="authContent" class="pageContent">
+                        <div id="signupBody">
+                            <div class="text-center">
+                                <div class="hidden-xs">
+                                    <h3>Bienvenido al<br />SISTEMA DE ADMISIONES</h3>
+                                </div>
+                                <div class="visible-xs">
+                                    <h4>SISTEMA DE ADMISIONES</h4>
+                                </div>
+                            </div>                            
+                            <br />
+                            <div class="col-md-offset-4 col-md-4">
+                                <form id="form1" class="form-horizontal" runat="server">
+                                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                        <ContentTemplate>
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <label>Usuario</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                                                        <asp:TextBox ID="tbUsuario" CssClass="form-control" placeholder="Ingrese su usuario ..." runat="server" MaxLength="20" AutoCompleteType="Disabled"></asp:TextBox>
+                                                    </div>
+                                                    <asp:RequiredFieldValidator ID="tbCI_RequiredFieldValidator" ControlToValidate="tbUsuario" runat="server" ErrorMessage="Debe ingresar su usuario." Text="*" CssClass="text-warning"></asp:RequiredFieldValidator>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Contraseña</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                                        <asp:TextBox ID="tbPassword" CssClass="form-control" placeholder="Ingrese su contraseña ..." runat="server" TextMode="Password" MaxLength="32" AutoCompleteType="Disabled"></asp:TextBox>
+                                                    </div>
+                                                    <asp:RequiredFieldValidator ID="tbPassword_RequiredFieldValidator" ControlToValidate="tbPassword" runat="server" ErrorMessage="Debe ingresar su contraseña." Text="*" CssClass="text-warning"></asp:RequiredFieldValidator>
+                                                </div>
+                                                <asp:Button ID="btnIngresar" CssClass="btn btn-success" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
+                                                <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                                                    <ProgressTemplate>
+                                                        <asp:Image ID="imgProcesando" runat="server" ImageUrl="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                                    </ProgressTemplate>
+                                                </asp:UpdateProgress>
+                                            </fieldset>
+                                            <br />
+                                                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="False" ShowSummary="True" CssClass="alert alert-danger"/>
+                                                <asp:Label ID="lblMensaje" runat="server" Text="" Visible="false" CssClass="alert alert-danger" Height="80px"></asp:Label>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-4">
+                                <script type="text/javascript" src="https://seal.thawte.com/getthawteseal?host_name=www.ucb.edu.bo&amp;size=S&amp;lang=es"></script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%--PIE--%>
+                    <div id="authFooter">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="text-right">
+                                    <br />
+                                    <asp:Label ID="Label1" runat="server" Text="Version 2019.01 TEST" CssClass="text-info small"></asp:Label><br />
+                                    <asp:Label ID="Label2" runat="server" Text="Fecha Publicacion: 29/03/2019" CssClass="text-info small"></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
-
-</asp:Content>
+    <script src="Scripts/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
