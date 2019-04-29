@@ -34,13 +34,13 @@
                         </div>
                     </li>
                     <li>
-                        <a id="sbInicio" runat="server" href="Index.aspx" visible="false" ><i class="fa fa-home fa-fw"></i>Inicio</a>
+                        <a id="sbInicio" runat="server" href="Index.aspx" visible="true" ><i class="fa fa-home fa-fw"></i>Inicio</a>
                     </li>
                     <li>
-                        <a id="sbBuscarPersona" runat="server" href="Index.aspx" visible="false" ><i class="fa fa-home fa-fw"></i>Inicio</a>
+                        <a id="sbBuscarPersona" runat="server" href="ADMIS_BuscarPersona.aspx" visible="true" ><i class="fa fa-home fa-fw"></i>Buscar registro</a>
                     </li>
                     <li>
-                        <a id="sbRegistrarPersona" runat="server" href="Index.aspx" visible="false" ><i class="fa fa-home fa-fw"></i>Inicio</a>
+                        <a id="sbRegistrarPersona" runat="server" href="ADMIS_FormRegistro.aspx" visible="true" ><i class="fa fa-home fa-fw"></i>Registrar nuevo</a>
                     </li>
                 </ul>
         </nav>
@@ -55,7 +55,7 @@
                             </button>   
                         </div>      
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a id="sbCerrarSesion" runat="server" visible="false" style="color:#0e0e38;" href="STRS_Salir.aspx">Cerrar Sesión</a></li>
+                            <li><a id="sbCerrarSesion" runat="server" visible="false" style="color:#0e0e38;" href="Salir.aspx">Cerrar Sesión</a></li>
                         </ul>
                     </div>
             </nav>

@@ -19,11 +19,11 @@ namespace Admisiones.Forms
         GEN_Java libJava = new GEN_Java();
         GEN_WebForms webForms = new GEN_WebForms();
         SIS_GeneralesSistema Generales = new SIS_GeneralesSistema();
- 
+
         #endregion
 
         #region "Clase de tablas de la Base de Datos"
-
+        BD_ADMIS_DatosPersonales libDatos = new BD_ADMIS_DatosPersonales();
         #endregion
 
         #region "Funciones y procedimientos"
@@ -118,15 +118,15 @@ namespace Admisiones.Forms
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            /*pnMensajeError.Visible = false;
+            pnMensajeError.Visible = false;
             pnMensajeOK.Visible = false;
             pnsugeridos.Visible = true;
-            libusu.StrConexion = axVarSes.Lee<string>("strConexion");
+            libDatos.StrConexion = axVarSes.Lee<string>("strConexion");
             gvUsuarios.Visible = true;
             gvUsuarios.Columns[0].Visible = true;
-            gvUsuarios.DataSource = libusu.ObtenerUsuariosSugeridos(tbusuario.Text.ToUpper());
+            gvUsuarios.DataSource = libDatos.dtObtenerPersonas(tbusuario.Text);
             gvUsuarios.DataBind();
-            gvUsuarios.Columns[0].Visible = false;*/
+            gvUsuarios.Columns[0].Visible = false;
         }
 
 
@@ -190,9 +190,10 @@ namespace Admisiones.Forms
                 llenartabla();
             }*/
 
-        } 
+        }
 
         #endregion
+
 
     }
 }

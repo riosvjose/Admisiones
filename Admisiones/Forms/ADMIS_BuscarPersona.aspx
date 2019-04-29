@@ -76,13 +76,6 @@
                      </asp:Panel>
                     </div>
                     <%--PIE DEL PANEL--%>
-			        <div class="panel-footer">
-                        <div class="row">
-                            <div class="btn-group">
-                                <asp:Button ID="btnAgregar" runat="server" CssClass="btn btn-success" Text="Agregar usuario" CausesValidation="false" OnClick="btnAgregarUsuario_Click" />
-                            </div>
-                        </div>
-			        </div>
 		        </div>
             </asp:Panel>    
             <%--Mensajes de exito y error--%>

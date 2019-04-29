@@ -39,7 +39,7 @@
 			        <div class="panel-body">
                         <br/>
                         <div class="row mb-3">
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
                                 <div class="col-xs-12 text-center">
                                       <asp:Label ID="lblSemestre" Text="1-2019" runat="server" ></asp:Label>
                                 </div>
@@ -50,10 +50,19 @@
                             
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
                                 <div class="col-xs-12">
-                                      <asp:DropDownList ID="ddlCarreras" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                                    <div class="form-group">
+                                        <div class="form-inline">
+                                            <asp:DropDownList ID="ddlCarreras" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                                        </div>
+                                    </div>
+                                      
                                 </div>
-                                <div class="col-xs-12 text-center">
-                                    <strong><asp:Label ID="Label15" runat="server" >Carrera</asp:Label></strong>
+                                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 text-center">
+                                    <div class="form-group">
+                                        <div class="form-inline">
+                                            <strong><asp:Label ID="Label15" runat="server" >Carrera</asp:Label></strong>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -118,8 +127,12 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                <div class="col-xs-12">
-                                      <asp:DropDownList ID="ddlGrupoSangre" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                                <div class="col-xs-12 text-center">
+                                    <div class="form-group">
+                                        <div class="form-inline">
+                                            <asp:DropDownList ID="ddlGrupoSangre" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                                            </div>
+                                        </div>
                                 </div>
                                 <div class="col-xs-12 text-center">
                                     <strong><asp:Label ID="lblGrupoSangre" runat="server" >Grupo sanguíneo</asp:Label></strong>
@@ -201,6 +214,14 @@
                                     <strong><asp:Label ID="lblCiudadNac" runat="server">Ciudad de Nacimiento</asp:Label></strong>
                                 </div>
                             </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <div class="col-xs-12">
+                                      <asp:DropDownList ID="ddlNacionalidad" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                                </div>
+                                <div class="col-xs-12 text-center">
+                                    <strong><asp:Label ID="lblNacionalidad" runat="server">Nacionalidad</asp:Label></strong>
+                                </div>
+                            </div>
                         </div>
                        </div> 
                     <%--PIE DEL PANEL--%>	       
@@ -245,7 +266,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-xs-12col-sm-8 col-md-7 col-lg-6">
+                            <div class="col-xs-12 col-sm-7 col-md-6 col-lg-5">
                                 <div class="col-xs-12">
                                       <asp:TextBox ID="tbNombreEdificio" runat="server" CssClass="form-control" MaxLength="60" AutoCompleteType="Disabled" ></asp:TextBox>
                                 </div>
@@ -254,7 +275,16 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="tbNombreEdificio" CssClass="text-danger" ErrorMessage="El campo 'N° Documento de identidad' es obligatorio.">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
-                           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                <div class="col-xs-12">
+                                      <asp:TextBox ID="tbPiso" runat="server" CssClass="form-control" MaxLength="60" AutoCompleteType="Disabled" ></asp:TextBox>
+                                </div>
+                                <div class="col-xs-12 text-center">
+                                    <strong><asp:Label ID="lblPiso" runat="server">Piso</asp:Label></strong>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator28" runat="server" ControlToValidate="tbPiso" CssClass="text-danger" ErrorMessage="El campo 'N° Documento de identidad' es obligatorio.">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                           <div class="col-xs-12 col-sm-5 col-md-3 col-lg-2">
                                 <div class="col-xs-12">
                                       <asp:TextBox ID="tbNumeroDepto" runat="server" CssClass="form-control" MaxLength="20" AutoCompleteType="Disabled" ></asp:TextBox>
                                 </div>
@@ -411,6 +441,16 @@
                                 <div class="col-sm-5 col-md-4 col-lg-3">
                                        <asp:DropDownList ID="ddlParentesco" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
                                 </div>
+                                <div class="col-sm-5 col-md-4 col-lg-3">
+                                      <div class="col-xs-12 text-center">
+                                        <asp:RadioButton id="rbSi" GroupName="Seguimiento" Text="Si" runat="server" Checked="true"/>
+                                          <br />
+                                        <asp:RadioButton id="rbNo" GroupName="Seguimiento" Text="No" runat="server"/>
+                                    </div>
+                                    <div class="col-xs-12 text-center">
+                                        <strong><asp:Label ID="lblAutseguimiento" runat="server">Autorizar seguimiento</asp:Label></strong>
+                                </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -465,7 +505,7 @@
                                       <asp:DropDownList ID="ddlGeneroTutor" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
                                 </div>
                                 <div class="col-xs-12 text-center">
-                                    <strong><asp:Label ID="Label14" runat="server" >Género</asp:Label></strong>
+                                    <strong><asp:Label ID="lblGeneroTuror" runat="server" >Género</asp:Label></strong>
                                 </div>
                             </div>
                         </div>
@@ -562,7 +602,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                                 <div class="col-xs-12">
                                       <asp:TextBox ID="tbInstitucionLaboralTutor" runat="server" CssClass="form-control" MaxLength="100" AutoCompleteType="Disabled" ></asp:TextBox>
                                 </div>
@@ -571,13 +611,79 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator26" runat="server" ControlToValidate="tbInstitucionLaboralTutor" CssClass="text-danger" ErrorMessage="El campo 'Calle o avenida' es obligatorio.">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                 <div class="col-xs-12">
                                       <asp:TextBox ID="tbCargoTutor" runat="server" CssClass="form-control" MaxLength="100" AutoCompleteType="Disabled" ></asp:TextBox>
                                 </div>
                                 <div class="col-xs-12 text-center">
                                     <strong><asp:Label ID="lblCargoTutor" runat="server">Cargo</asp:Label></strong>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ControlToValidate="tbCargoTutor" CssClass="text-danger" ErrorMessage="El campo 'N°' es obligatorio.">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <div class="col-xs-12">
+                                      <asp:TextBox ID="tbTelefonoOficina" runat="server" CssClass="form-control" MaxLength="9" AutoCompleteType="Disabled" ></asp:TextBox>
+                                </div>
+                                <div class="col-xs-12 text-center">
+                                    <strong><asp:Label ID="lbltelefonoOficina" runat="server">Teléfono Oficina</asp:Label></strong>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                    <%--PIE DEL PANEL--%>	       
+			   </div>
+            </asp:Panel>
+            <asp:Panel ID="pnContactoEmergen" runat="server">
+		        <div class="panel panel-info">
+                    <%--ENCABEZADO DEL PANEL--%>
+			        <div class="panel-heading">
+                        <h3> <strong><asp:Label ID="lblContactoEmergen" runat="server" Text="Contacto de emergencia"></asp:Label></strong></h3>
+			        </div>
+                    <%--CUERPO DEL PANEL--%>
+			        <div class="panel-body">
+                        <br />
+                        <div class="row mb-3">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                      <div class="col-xs-12">
+                                         <strong><asp:Label ID="lblContactoEmergencia" runat="server">Definir tutor como contacto de emergencia: </asp:Label></strong>
+                                        <asp:RadioButton id="rbContactoEmerTutorSi" GroupName="rbContactoEmerTutor" Text="Si" runat="server" AutoPostBack="true" OnCheckedChanged="rbContactoEmerTutorSi_CheckedChanged"/>
+                                          
+                                        <asp:RadioButton id="rbContactoEmerTutorNo" GroupName="rbContactoEmerTutor" Text="No" runat="server" AutoPostBack="true" OnCheckedChanged="rbContactoEmerTutorNo_CheckedChanged" Checked="true"/>
+                                    </div>
+                                    <div class="col-xs-12 text-center">
+                                       
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+                                <div class="col-xs-12">
+                                      <asp:TextBox ID="tbNombreCompleto" runat="server" CssClass="form-control" MaxLength="150" AutoCompleteType="Disabled" ></asp:TextBox>
+                                </div>
+                                <div class="col-xs-12 text-center">
+                                    <strong><asp:Label ID="lblNombreCompleto" runat="server">Nombre completo</asp:Label></strong>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ControlToValidate="tbNombreCompleto" CssClass="text-danger" ErrorMessage="El campo 'Nombre completo' es obligatorio.">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <div class="col-xs-12">
+                                      <asp:TextBox ID="tbTelefonoContacto1" runat="server" CssClass="form-control" MaxLength="20" AutoCompleteType="Disabled" ></asp:TextBox>
+                                </div>
+                                <div class="col-xs-12 text-center">
+                                    <strong><asp:Label ID="lblTelefonoContacto1" runat="server">Teléfono de referencia 1</asp:Label></strong>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator32" runat="server" ControlToValidate="tbTelefonoContacto1" CssClass="text-danger" ErrorMessage="El campo 'Telefono de referencia 1' es obligatorio.">*</asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                 <div class="col-xs-12">
+                                      <asp:TextBox ID="tbTelefonoContacto2" runat="server" CssClass="form-control" MaxLength="20" AutoCompleteType="Disabled" ></asp:TextBox>
+                                </div>
+                                <div class="col-xs-12 text-center">
+                                    <strong><asp:Label ID="lblTelefonoContacto2" runat="server">Teléfono de referencia 2</asp:Label></strong>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ControlToValidate="tbTelefonoContacto2" CssClass="text-danger" ErrorMessage="El campo 'Telefono de referencia 1' es obligatorio.">*</asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>

@@ -156,6 +156,7 @@
     <Content Include="Forms\ADMIS_FormRegistro.aspx" />
     <Content Include="Forms\ADMIS_BuscarPersona.aspx" />
     <Content Include="Forms\Index.aspx" />
+    <Content Include="Forms\Salir.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
@@ -272,10 +273,34 @@
     <Compile Include="Forms\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Salir.aspx.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Salir.aspx.designer.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\iBD_Tablas.cs" />
+    <Compile Include="LibBD\BD_ADMIS_DatosTutor.cs" />
+    <Compile Include="LibBD\BD_ADMIS_ContactoEmergencia.cs" />
+    <Compile Include="LibBD\BD_Alumnos_Paralelos.cs" />
+    <Compile Include="LibBD\BD_Asignaciones.cs" />
+    <Compile Include="LibBD\BD_Bachilleres.cs" />
+    <Compile Include="LibBD\BD_Colegios.cs" />
+    <Compile Include="LibBD\BD_Dominios.cs" />
+    <Compile Include="LibBD\BD_Estados.cs" />
+    <Compile Include="LibBD\BD_Familiares.cs" />
+    <Compile Include="LibBD\BD_GEN_SubDepartamentos.cs" />
+    <Compile Include="LibBD\BD_Localidades.cs" />
+    <Compile Include="LibBD\BD_Paises.cs" />
+    <Compile Include="LibBD\BD_Paralelos.cs" />
+    <Compile Include="LibBD\BD_Personas.cs" />
+    <Compile Include="LibBD\BD_ADMIS_DatosPersonales.cs" />
+    <Compile Include="LibBD\BD_Personas_Datos_Adicionales.cs" />
+    <Compile Include="LibBD\BD_Titulos.cs" />
     <Compile Include="Lib\GEN_AutenticacionBD.cs" />
     <Compile Include="Lib\GEN_Cadenas.cs" />
     <Compile Include="Lib\GEN_Java1.cs" />
@@ -297,7 +322,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="LibBD\" />
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>

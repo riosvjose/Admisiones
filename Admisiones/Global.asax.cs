@@ -26,14 +26,19 @@ namespace Admisiones
             Session["strConexion"] = "";
             Session["UsuarioPersonaNumSec"] = "";
             Session["strDeptoUsuario"] = "";
+
+            //***** PARAMETROS PARA OPCIONES DE SISTEMA
             Session["strRol"] = "0"; // 1 administrativo, 0 externo
+            Session["strOperacion"] = "0"; // 0 registrar, 1 consolidar
+            Session["strPersonaRegistrar"] = "0"; // num_sec_dator_personale tabla admins datos personales
+            Session["strMensajeExito"] = ""; // Mensaje de exito operacion
 
             // ***** PARAMETROS ENVIO DE CORREOS DE TAREAS ÚNICAS
             Session["Email_IPHost"] = "";
             Session["Email_Cuenta"] = "";
             Session["Email_Usuario"] = "";
             Session["Email_Clave"] = "";
-            Session["EnviarCorreo"] = "1";       // 0:no enviar;  1: enviar
+            Session["EnviarCorreo"] = "0";       // 0:no enviar;  1: enviar
 
         }
     }
